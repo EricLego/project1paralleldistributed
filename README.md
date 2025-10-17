@@ -1,55 +1,49 @@
-# Project 1 – Countdown Protocol
+# Project 1 – Countdown Protocol (Python)
 
-This repository contains a Java implementation of the countdown protocol described in Project 1, Phase 1. The system exposes both iterative and concurrent server suites that follow a three-tier design.
+This repository now provides a Python implementation of the countdown protocol described in Project 1, Phase 1. The system exposes iterative and concurrent TCP server suites that follow a three-tier design.
 
 ## Repository structure
 
 ```
-src/main/java/com/example/countdown/
-  service/               # Application-tier countdown business logic
+src/main/python/countdown/
+  service.py             # Application-tier countdown business logic
   common/                # Infrastructure components shared by servers
   iterative/             # Iterative server and client implementations
   concurrent/            # Concurrent server and client implementations
 docs/                    # Architecture report and sample output transcripts
 ```
 
-## Building
-
-```bash
-javac $(find src/main/java -name "*.java")
-```
-
-The compiled `.class` files will be placed alongside their source files.
-
 ## Running
+
+All commands assume you are in the repository root, have Python 3.11+, and set `PYTHONPATH=src/main/python` so the modules can be imported.
 
 ### Iterative server and client
 
-Open two terminals:
+Open two terminals.
 
-1. Start the server (default port 5000):
+1. Start the server (default host `0.0.0.0`, port `5000`):
    ```bash
-   java -cp src/main/java com.example.countdown.iterative.IterativeCountdownServer
+   PYTHONPATH=src/main/python python -m countdown.iterative.server 5000 0.0.0.0
    ```
 2. Run the client with a positive integer argument:
    ```bash
-   java -cp src/main/java com.example.countdown.iterative.IterativeCountdownClient 5
+   PYTHONPATH=src/main/python python -m countdown.iterative.client 5 localhost 5000
    ```
+
+Use `--max-clients` on the server to exit automatically after serving a fixed number of requests.
 
 ### Concurrent server and client
 
-Open two terminals:
-
-1. Start the server (default port 5001):
+1. Start the server (default host `0.0.0.0`, port `5001`):
    ```bash
-   java -cp src/main/java com.example.countdown.concurrent.ConcurrentCountdownServer
+   PYTHONPATH=src/main/python python -m countdown.concurrent.server 5001 0.0.0.0 --max-workers 4
    ```
 2. Run the client:
    ```bash
-   java -cp src/main/java com.example.countdown.concurrent.ConcurrentCountdownClient 4
+   PYTHONPATH=src/main/python python -m countdown.concurrent.client 4 localhost 5001
    ```
 
-Both clients print the countdown returned by the server. Supply `host` and `port` arguments to override defaults.
+Override host/port as needed. The concurrent server spawns a thread for each client connection (bounded by `--max-workers` when provided).
 
 ## Testing
 
@@ -57,6 +51,6 @@ Sample command transcripts are stored in [`docs/sample-output.md`](docs/sample-o
 
 ## Deliverables
 
-* Source code for iterative and concurrent suites (see `src/main/java`).
+* Source code for iterative and concurrent suites (see `src/main/python/countdown`).
 * [`docs/three-tier-architecture.md`](docs/three-tier-architecture.md) summarises the layered design.
 * [`docs/sample-output.md`](docs/sample-output.md) contains terminal transcripts demonstrating the countdown protocol.

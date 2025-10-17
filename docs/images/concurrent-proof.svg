@@ -1,0 +1,26 @@
+<svg xmlns='http://www.w3.org/2000/svg' width='1200' height='550' viewBox='0 0 1200 550'>
+  <rect width='100%' height='100%' fill='black'/>
+  <text x='20' y='22' fill='lime' font-family='DejaVu Sans Mono, monospace' font-size='16'>Concurrent server with overlapping clients</text>
+  <text x='20' y='44' fill='lime' font-family='DejaVu Sans Mono, monospace' font-size='16'></text>
+  <text x='20' y='66' fill='lime' font-family='DejaVu Sans Mono, monospace' font-size='16'>Server log:</text>
+  <text x='20' y='88' fill='lime' font-family='DejaVu Sans Mono, monospace' font-size='16'>[Concurrent] Listening on 127.0.0.1:6060...</text>
+  <text x='20' y='110' fill='lime' font-family='DejaVu Sans Mono, monospace' font-size='16'>[Concurrent] Connected: 127.0.0.1:49428</text>
+  <text x='20' y='132' fill='lime' font-family='DejaVu Sans Mono, monospace' font-size='16'>[Concurrent] Connected: 127.0.0.1:49442</text>
+  <text x='20' y='154' fill='lime' font-family='DejaVu Sans Mono, monospace' font-size='16'>[Concurrent] Completed: 127.0.0.1:49442</text>
+  <text x='20' y='176' fill='lime' font-family='DejaVu Sans Mono, monospace' font-size='16'>[Concurrent] Completed: 127.0.0.1:49428</text>
+  <text x='20' y='198' fill='lime' font-family='DejaVu Sans Mono, monospace' font-size='16'></text>
+  <text x='20' y='220' fill='lime' font-family='DejaVu Sans Mono, monospace' font-size='16'>Client 1 output (delayed start value 8):</text>
+  <text x='20' y='242' fill='lime' font-family='DejaVu Sans Mono, monospace' font-size='16'>8</text>
+  <text x='20' y='264' fill='lime' font-family='DejaVu Sans Mono, monospace' font-size='16'>7</text>
+  <text x='20' y='286' fill='lime' font-family='DejaVu Sans Mono, monospace' font-size='16'>6</text>
+  <text x='20' y='308' fill='lime' font-family='DejaVu Sans Mono, monospace' font-size='16'>5</text>
+  <text x='20' y='330' fill='lime' font-family='DejaVu Sans Mono, monospace' font-size='16'>4</text>
+  <text x='20' y='352' fill='lime' font-family='DejaVu Sans Mono, monospace' font-size='16'>3</text>
+  <text x='20' y='374' fill='lime' font-family='DejaVu Sans Mono, monospace' font-size='16'>2</text>
+  <text x='20' y='396' fill='lime' font-family='DejaVu Sans Mono, monospace' font-size='16'>1</text>
+  <text x='20' y='418' fill='lime' font-family='DejaVu Sans Mono, monospace' font-size='16'></text>
+  <text x='20' y='440' fill='lime' font-family='DejaVu Sans Mono, monospace' font-size='16'>Client 2 output (start value 3):</text>
+  <text x='20' y='462' fill='lime' font-family='DejaVu Sans Mono, monospace' font-size='16'>3</text>
+  <text x='20' y='484' fill='lime' font-family='DejaVu Sans Mono, monospace' font-size='16'>2</text>
+  <text x='20' y='506' fill='lime' font-family='DejaVu Sans Mono, monospace' font-size='16'>1</text>
+</svg>
